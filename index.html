@@ -1,0 +1,757 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pawfect Bakes | Birthday Cakes for Dogs & Cats</title>
+    <meta name="description" content="Create a special birthday cake for your pet. Choose a size, flavour, topping and personalised design.">
+    <meta name="theme-color" content="#fff3f5">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement">
+    🐾 Made with love for your furry family
+    <span> | </span>
+    Custom birthday cakes for dogs and cats
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+    <a href="#top" class="logo" aria-label="Pawfect Bakes home">
+        🐾 Pawfect Bakes
+    </a>
+
+    <nav aria-label="Main navigation">
+        <a href="#builder">Build a Cake</a>
+        <a href="#shop">Shop</a>
+        <a href="#how">How It Works</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+
+    <button type="button" class="cart-btn" id="openCart" aria-label="Open shopping cart">
+        🛒 Cart (<span id="cartCount">0</span>)
+    </button>
+</header>
+
+<main id="top">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-text">
+            <span class="eyebrow">A LITTLE CAKE. A LOT OF LOVE. ❤️</span>
+
+            <h1>Cakes your pet can actually eat.</h1>
+
+            <p>
+                Because your furry best friend deserves a birthday
+                worth wagging their tail for. Choose a flavour,
+                create a design and make their day special.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#builder" class="btn btn-primary">
+                    🎂 Build Your Cake
+                </a>
+
+                <a href="#shop" class="btn btn-ghost">
+                    Explore Cakes
+                </a>
+
+                <button type="button" class="btn btn-ghost" id="surpriseBtn">
+                    🎲 Surprise Me
+                </button>
+            </div>
+
+            <div class="hero-trust">
+                <span>🐶 For dogs</span>
+                <span>🐱 For cats</span>
+                <span>🎁 Personalised designs</span>
+            </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+            <div class="big-cake">🎂</div>
+            <span class="float f1">🐶</span>
+            <span class="float f2">🐱</span>
+            <span class="float f3">🦴</span>
+            <span class="float f4">💗</span>
+        </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="benefits section">
+        <div class="benefit-item">
+            <span>🧁</span>
+            <h3>Made to order</h3>
+            <p>Choose your preferred design.</p>
+        </div>
+
+        <div class="benefit-item">
+            <span>🐾</span>
+            <h3>Pet-focused recipes</h3>
+            <p>Ingredients selected for the intended animal.</p>
+        </div>
+
+        <div class="benefit-item">
+            <span>🎀</span>
+            <h3>Personal touches</h3>
+            <p>Add your pet's name and a birthday message.</p>
+        </div>
+
+        <div class="benefit-item">
+            <span>🚚</span>
+            <h3>Delivery enquiries</h3>
+            <p>Check availability for your location.</p>
+        </div>
+    </section>
+
+    <!-- CAKE BUILDER -->
+    <section id="builder" class="section">
+        <div class="section-heading">
+            <span class="eyebrow">YOUR IDEA, YOUR CAKE</span>
+            <h2>Build your pet's dream cake 🎂</h2>
+            <p class="sub">
+                Choose your favourites and personalise a cake
+                for your four-legged family member.
+            </p>
+        </div>
+
+        <div class="builder">
+
+            <!-- LIVE PREVIEW -->
+            <div class="preview" aria-live="polite">
+                <span class="eyebrow">YOUR DESIGN</span>
+
+                <div class="preview-cake">
+                    <span id="pvTopping" class="pv-topping">🦴</span>
+                    <span id="pvCake" class="pv-cake">🎂</span>
+                </div>
+
+                <p class="pv-name" id="pvName">For your pet</p>
+                <p class="pv-summary" id="pvSummary">
+                    Mini cake · Peanut butter
+                </p>
+
+                <p class="pv-price" id="pvPrice">Rs. 1,800</p>
+
+                <p class="small">
+                    Preview is illustrative. The actual cake design
+                    may differ from this display.
+                </p>
+            </div>
+
+            <!-- CUSTOMIZATION CONTROLS -->
+            <div class="controls">
+
+                <fieldset>
+                    <legend>1. Who is it for?</legend>
+
+                    <div class="chips" data-group="pet">
+                        <button type="button" class="chip active" data-value="Dog">
+                            🐶 Dog
+                        </button>
+
+                        <button type="button" class="chip" data-value="Cat">
+                            🐱 Cat
+                        </button>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>2. Choose a size</legend>
+
+                    <div class="chips" data-group="size">
+                        <button type="button" class="chip active" data-value="Mini">
+                            Mini · Rs. 1,500
+                        </button>
+
+                        <button type="button" class="chip" data-value="Medium">
+                            Medium · Rs. 2,500
+                        </button>
+
+                        <button type="button" class="chip" data-value="Party">
+                            Party · Rs. 4,000
+                        </button>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>3. Choose a flavour</legend>
+
+                    <div class="chips" data-group="flavour">
+                        <button type="button" class="chip active" data-value="Peanut butter">
+                            🥜 Peanut butter
+                        </button>
+
+                        <button type="button" class="chip" data-value="Banana">
+                            🍌 Banana
+                        </button>
+
+                        <button type="button" class="chip" data-value="Chicken & carrot">
+                            🍗 Chicken &amp; carrot
+                        </button>
+
+                        <button type="button" class="chip" data-value="Tuna">
+                            🐟 Tuna
+                        </button>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>4. Select a topping (+ Rs. 300)</legend>
+
+                    <div class="chips" data-group="topping">
+                        <button type="button" class="chip active" data-value="🦴">
+                            🦴 Bone
+                        </button>
+
+                        <button type="button" class="chip" data-value="🍓">
+                            🍓 Berry
+                        </button>
+
+                        <button type="button" class="chip" data-value="🐟">
+                            🐟 Fish
+                        </button>
+
+                        <button type="button" class="chip" data-value="⭐">
+                            ⭐ Star
+                        </button>
+                    </div>
+                </fieldset>
+
+                <label class="field" for="petName">
+                    5. Your pet's name
+                    <input type="text" id="petName" maxlength="14"
+                        placeholder="e.g. Bruno">
+                </label>
+
+                <label class="field" for="petBirthday">
+                    Pet's birthday
+                    <input type="date" id="petBirthday">
+                </label>
+
+                <label class="field" for="cakeColour">
+                    Preferred cake colour
+                    <select id="cakeColour">
+                        <option value="Natural">Natural</option>
+                        <option value="Pink">Pastel pink</option>
+                        <option value="Blue">Pastel blue</option>
+                        <option value="Yellow">Soft yellow</option>
+                        <option value="Green">Mint green</option>
+                    </select>
+                </label>
+
+                <label class="field" for="cakeNotes">
+                    Special requests or dietary requirements
+                    <textarea id="cakeNotes" rows="3" maxlength="250"
+                        placeholder="Tell us about your preferred design or dietary needs."></textarea>
+                </label>
+
+                <p class="small">
+                    Please inform us about allergies before ordering.
+                    Special requests must be confirmed by the bakery.
+                </p>
+
+                <button type="button" class="btn btn-primary full" id="addCustom">
+                    Add Custom Cake to Cart
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- READY-MADE PRODUCTS -->
+    <section id="shop" class="section alt">
+        <div class="section-heading">
+            <span class="eyebrow">BAKERY FAVOURITES</span>
+            <h2>Ready-made favourites 💕</h2>
+            <p class="sub">
+                Discover a little birthday magic for your furry friend.
+            </p>
+        </div>
+
+        <div class="shop-toolbar">
+            <label class="field" for="productSearch">
+                Search cakes
+                <input type="search" id="productSearch"
+                    placeholder="Search by cake name...">
+            </label>
+
+            <label class="field" for="productFilter">
+                Filter cakes
+                <select id="productFilter">
+                    <option value="all">All cakes</option>
+                    <option value="dog">For dogs</option>
+                    <option value="cat">For cats</option>
+                    <option value="birthday">Birthday favourites</option>
+                </select>
+            </label>
+        </div>
+
+        <!-- Products are inserted here by script.js -->
+        <div class="grid" id="productGrid">
+            <p class="small">Our delicious favourites are waiting to be loaded.</p>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="section">
+        <div class="section-heading">
+            <span class="eyebrow">SIMPLE AS ONE, TWO, THREE</span>
+            <h2>How it works</h2>
+            <p class="sub">A special celebration, made simple.</p>
+        </div>
+
+        <ol class="steps">
+            <li>
+                <span class="step-icon">🎨</span>
+                <h3>Pick or build</h3>
+                <p>Choose a ready-made cake or create your own design.</p>
+            </li>
+
+            <li>
+                <span class="step-icon">🧁</span>
+                <h3>We confirm and bake</h3>
+                <p>We confirm your order, ingredients and preferred date.</p>
+            </li>
+
+            <li>
+                <span class="step-icon">🎁</span>
+                <h3>Celebrate together</h3>
+                <p>Prepare for a memorable birthday with your furry friend.</p>
+            </li>
+        </ol>
+
+        <p class="safe">
+            🛡️ Recipes must be verified for the intended animal.
+            We do not use chocolate or xylitol in our intended pet-cake recipes.
+            Ingredients and allergy precautions should always be confirmed.
+        </p>
+    </section>
+
+    <!-- CUSTOMER REVIEWS -->
+    <section id="reviews" class="section reviews-section alt">
+        <div class="section-heading">
+            <span class="eyebrow">HAPPY PETS, HAPPY PEOPLE</span>
+            <h2>Little paws, big celebrations 🐾</h2>
+            <p class="sub">A little love from our pet parents.</p>
+        </div>
+
+        <div class="grid review-grid">
+            <article class="review-card">
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                    ★★★★★
+                </div>
+                <p>
+                    "Bruno loved his birthday cake! The custom design
+                    made his special day even more memorable."
+                </p>
+                <div class="review-customer">
+                    <span class="review-avatar">🐶</span>
+                    <div>
+                        <strong>Amaya &amp; Bruno</strong>
+                        <small>Dog parent</small>
+                    </div>
+                </div>
+            </article>
+
+            <article class="review-card">
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                    ★★★★★
+                </div>
+                <p>
+                    "I love the idea of choosing a flavour and adding
+                    my cat's name. Such a thoughtful gift!"
+                </p>
+                <div class="review-customer">
+                    <span class="review-avatar">🐱</span>
+                    <div>
+                        <strong>Dinithi &amp; Milo</strong>
+                        <small>Cat parent</small>
+                    </div>
+                </div>
+            </article>
+
+            <article class="review-card">
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                    ★★★★★
+                </div>
+                <p>
+                    "The cake made our little birthday celebration
+                    feel extra special."
+                </p>
+                <div class="review-customer">
+                    <span class="review-avatar">🐕</span>
+                    <div>
+                        <strong>Kasun &amp; Toby</strong>
+                        <small>Dog parent</small>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <p class="small">
+            Sample reviews for the website design. Replace these with
+            genuine customer reviews before publishing.
+        </p>
+    </section>
+
+    <!-- DELIVERY INFORMATION -->
+    <section id="delivery" class="section">
+        <div class="section-heading">
+            <span class="eyebrow">FROM OUR BAKERY TO YOUR DOOR</span>
+            <h2>Fresh cakes, happy tails 🚚</h2>
+            <p class="sub">
+                Let's plan something special for your pet.
+            </p>
+        </div>
+
+        <div class="grid delivery-grid">
+            <article class="delivery-card">
+                <span class="step-icon">📍</span>
+                <h3>Local delivery</h3>
+                <p>
+                    Ask us whether delivery is available in your area
+                    and confirm the delivery charge.
+                </p>
+            </article>
+
+            <article class="delivery-card">
+                <span class="step-icon">🎂</span>
+                <h3>Made to order</h3>
+                <p>
+                    Tell us your preferred date. Orders depend on
+                    bakery availability and confirmation.
+                </p>
+            </article>
+
+            <article class="delivery-card">
+                <span class="step-icon">💝</span>
+                <h3>Personal touches</h3>
+                <p>
+                    Include your pet's name and an optional birthday
+                    message for an extra-special celebration.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section alt">
+        <div class="section-heading">
+            <span class="eyebrow">GOOD TO KNOW</span>
+            <h2>Frequently asked questions</h2>
+            <p class="sub">A few answers before you order.</p>
+        </div>
+
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>Are these cakes suitable for both dogs and cats?</summary>
+                <p>
+                    Recipes should be formulated for the intended animal.
+                    Select the appropriate pet type and confirm the
+                    ingredients before ordering.
+                </p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Can I personalise my pet's cake?</summary>
+                <p>
+                    Yes. Use the cake builder to select a size, flavour,
+                    topping and your pet's name.
+                </p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Can I request an allergy-friendly cake?</summary>
+                <p>
+                    Contact the bakery before ordering. Ingredients,
+                    possible cross-contact and the suitability of a
+                    requested recipe must be confirmed.
+                </p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Can I choose a delivery date?</summary>
+                <p>
+                    You can provide your preferred date during checkout.
+                    Your date is subject to bakery confirmation.
+                </p>
+            </details>
+
+            <details class="faq-item">
+                <summary>How do I pay?</summary>
+                <p>
+                    Cash on delivery is the proposed payment method for
+                    this demo. Confirm the payment method with the bakery
+                    before placing a real order.
+                </p>
+            </details>
+        </div>
+    </section>
+
+    <!-- CONTACT / CTA -->
+    <section id="contact" class="section contact-section">
+        <div class="contact-content">
+            <span class="eyebrow">LET'S CELEBRATE</span>
+            <h2>Make their birthday pawsome! 🐾</h2>
+            <p>
+                Your best friend gives you unconditional love.
+                Give them a birthday to remember.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#builder" class="btn btn-primary">
+                    Create Your Cake
+                </a>
+                <a href="#shop" class="btn btn-ghost">
+                    Browse the Bakery
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <div>
+            <a href="#top" class="logo">🐾 Pawfect Bakes</a>
+            <p>
+                Little cakes for the pets who make our lives
+                a whole lot sweeter.
+            </p>
+            <p>📍 Negombo, Sri Lanka</p>
+        </div>
+
+        <div>
+            <h3>Explore</h3>
+            <a href="#builder">Build a cake</a>
+            <a href="#shop">Shop cakes</a>
+            <a href="#how">How it works</a>
+        </div>
+
+        <div>
+            <h3>Need help?</h3>
+            <a href="#delivery">Delivery information</a>
+            <a href="#faq">Frequently asked questions</a>
+            <a href="#contact">Contact us</a>
+            <p class="small">
+                Email: hello@pawfectbakes.example
+            </p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>🐾 Pawfect Bakes · Made with love in Negombo</p>
+        <p>&copy; <span id="currentYear">2026</span> Pawfect Bakes. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- CART OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- SHOPPING CART DRAWER -->
+<aside class="drawer" id="drawer"
+    aria-label="Shopping cart" aria-hidden="true">
+
+    <div class="drawer-head">
+        <div>
+            <h2>Your cart 🛒</h2>
+            <p class="small">Your pet's birthday treats.</p>
+        </div>
+
+        <button type="button" class="icon-btn" id="closeCart"
+            aria-label="Close cart">✕</button>
+    </div>
+
+    <div id="cartBody">
+        <div id="cartEmpty" class="empty">
+            <div class="empty-emoji">🐕‍🦺</div>
+            <p>
+                <strong>
+                    Your cart is as empty as a food bowl at dinner time!
+                </strong>
+            </p>
+            <button type="button" class="btn btn-primary" id="shopNow">
+                Find a cake
+            </button>
+        </div>
+
+        <ul id="cartList" class="cart-list"></ul>
+    </div>
+
+    <!-- CHECKOUT -->
+    <form id="checkout" class="checkout" hidden>
+        <h3>Delivery details</h3>
+
+        <div class="total-row">
+            <span>Subtotal</span>
+            <strong id="cartSubtotal">Rs. 0</strong>
+        </div>
+
+        <div class="total-row">
+            <span>Delivery fee</span>
+            <strong id="deliveryFee">To be confirmed</strong>
+        </div>
+
+        <div class="total-row">
+            <span>Total</span>
+            <strong id="cartTotal">Rs. 0</strong>
+        </div>
+
+        <p class="small">
+            Final delivery charges must be confirmed before the order
+            is accepted.
+        </p>
+
+        <label class="field" for="deliveryDate">
+            Preferred delivery date
+            <input type="date" id="deliveryDate" required>
+        </label>
+
+        <label class="field" for="giftMsg">
+            Birthday message (optional)
+            <textarea id="giftMsg" rows="2" maxlength="120"
+                placeholder="Happy birthday, Bruno! Love, Grandma"></textarea>
+        </label>
+
+        <label class="field" for="cName">
+            Your full name
+            <input type="text" id="cName" required
+                autocomplete="name" maxlength="100">
+        </label>
+
+        <label class="field" for="cPhone">
+            Phone number
+            <input type="tel" id="cPhone" required
+                autocomplete="tel" maxlength="20"
+                placeholder="Your contact number">
+        </label>
+
+        <label class="field" for="cEmail">
+            Email address (optional)
+            <input type="email" id="cEmail"
+                autocomplete="email" maxlength="150">
+        </label>
+
+        <label class="field" for="cAddr">
+            Delivery address
+            <textarea id="cAddr" required
+                autocomplete="street-address"
+                maxlength="400" rows="3"
+                placeholder="House number, street, town"></textarea>
+        </label>
+
+        <label class="field" for="cDistrict">
+            District
+            <select id="cDistrict" required>
+                <option value="">Choose your district</option>
+                <option>Colombo</option>
+                <option>Gampaha</option>
+                <option>Kalutara</option>
+                <option>Kandy</option>
+                <option>Matale</option>
+                <option>Nuwara Eliya</option>
+                <option>Galle</option>
+                <option>Matara</option>
+                <option>Hambantota</option>
+                <option>Jaffna</option>
+                <option>Kilinochchi</option>
+                <option>Mannar</option>
+                <option>Vavuniya</option>
+                <option>Mullaitivu</option>
+                <option>Batticaloa</option>
+                <option>Ampara</option>
+                <option>Trincomalee</option>
+                <option>Kurunegala</option>
+                <option>Puttalam</option>
+                <option>Anuradhapura</option>
+                <option>Polonnaruwa</option>
+                <option>Badulla</option>
+                <option>Monaragala</option>
+                <option>Ratnapura</option>
+                <option>Kegalle</option>
+            </select>
+        </label>
+
+        <label class="field" for="orderNotes">
+            Additional delivery instructions (optional)
+            <textarea id="orderNotes" rows="2" maxlength="250"
+                placeholder="Landmarks or helpful delivery details"></textarea>
+        </label>
+
+        <p class="small">
+            Demo checkout only. Submitting this form does not
+            automatically contact the bakery or guarantee an order.
+        </p>
+
+        <button class="btn btn-primary full" type="submit">
+            Place Order
+        </button>
+    </form>
+</aside>
+
+<!-- ORDER SUCCESS MODAL -->
+<div class="modal" id="modal" role="dialog"
+    aria-modal="true" aria-labelledby="modalTitle" hidden>
+
+    <div class="modal-box">
+        <div class="party">🎉</div>
+        <h2 id="modalTitle">Order received!</h2>
+        <p id="modalMsg">
+            Thank you for choosing Pawfect Bakes.
+        </p>
+        <button type="button" class="btn btn-primary" id="closeModal">
+            Done
+        </button>
+    </div>
+</div>
+
+<!-- NOTIFICATION -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- BACK TO TOP -->
+<a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
+<!-- JAVASCRIPT -->
+<script src="script.js"></script>
+
+<!-- SMALL GENERAL PAGE ENHANCEMENTS -->
+<script>
+    // Display the current year automatically.
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+    // Prevent choosing a delivery date in the past.
+    const deliveryDateInput = document.getElementById("deliveryDate");
+    const today = new Date();
+    const localToday = [
+        today.getFullYear(),
+        String(today.getMonth() + 1).padStart(2, "0"),
+        String(today.getDate()).padStart(2, "0")
+    ].join("-");
+
+    deliveryDateInput.min = localToday;
+
+    // Prevent choosing a birthday in the past accidentally.
+    // Remove this restriction if you need to enter past birthdays.
+    document.getElementById("petBirthday").max = localToday;
+</script>
+
+</body>
+</html>
